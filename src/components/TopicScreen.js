@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Content, Button, Text } from 'native-base';
+import { Container, Content, Button, Text, Header, Body, Title } from 'native-base';
 import topics from '../../data/topics';
 
 
@@ -17,6 +17,14 @@ class TopicScreen extends Component {
     return (
       <Container>
         <Content>
+          <Header>
+            <Body>
+              <Title>
+                Topics
+              </Title>
+            </Body>
+          </Header>
+
           {topics.map((topic, index) => {
             return (
               <Button

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { View, Text as RNText } from 'react-native';
-import { Container, Content, Button, Text, Card, CardItem, Body, Footer, FooterTab } from 'native-base';
+import { Container, Content, Button, Text, Card, CardItem, Body, Footer, FooterTab, Header, Title } from 'native-base';
 
 class QuestionScreen extends Component {
   showSelection(question) {
     this.props.navigator.push({
-      name: 'Timer',
+      name: 'Selection',
       passProps: {
-        question,
         answer: this.props.answer,
+        eval: true,
       },
     });
   }
@@ -25,6 +25,13 @@ class QuestionScreen extends Component {
     return (
       <Container>
         <View style={{ flex: 1 }}>
+          <Header>
+            <Body>
+              <Title>
+                Question
+              </Title>
+            </Body>
+          </Header>
           <Card>
             <CardItem
               button
@@ -41,7 +48,7 @@ class QuestionScreen extends Component {
             <FooterTab>
               <Button onPress={() => this.showSelection(this.props.questions[this.state.index])}>
                 <Text>
-                  Proceed
+                  Done
                 </Text>
               </Button>
             </FooterTab>

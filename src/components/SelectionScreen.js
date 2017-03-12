@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
-import { Container, Col, Row, Grid } from 'native-base';
+import { Container, Col, Row, Grid, Header, Body, Title } from 'native-base';
 
 class SelectionScreen extends Component {
   startTimer(answer) {
@@ -25,6 +25,13 @@ class SelectionScreen extends Component {
     return (
       <Container>
         <View style={{ flex: 1 }}>
+          <Header>
+            <Body>
+              <Title>
+                Investigator
+              </Title>
+            </Body>
+          </Header>
           <Grid>
             <Col
               style={{ backgroundColor: '#635DB7' }}

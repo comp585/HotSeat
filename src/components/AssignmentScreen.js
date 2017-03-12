@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
-import { Container, Footer, FooterTab, Button, Col, Row, Grid } from 'native-base';
+import { Container, Footer, FooterTab, Button, Col, Row, Grid, Header, Body, Title } from 'native-base';
 
 class AssignmentScreen extends Component {
   constructor(props) {
@@ -25,6 +25,13 @@ class AssignmentScreen extends Component {
     return (
       <Container>
         <View style={{ flex: 1 }} >
+          <Header>
+            <Body>
+              <Title>
+                Teller
+              </Title>
+            </Body>
+          </Header>
           <Grid>
             <Row />
             <Row>
