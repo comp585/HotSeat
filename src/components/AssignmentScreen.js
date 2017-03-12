@@ -5,10 +5,11 @@ import { Container, Footer, FooterTab, Button, Col, Row, Grid, Header, Body, Tit
 class AssignmentScreen extends Component {
   constructor(props) {
     super(props);
-    const rand = Math.random();
+    const answer = (Math.random() > 0.5);
     this.state = {
-      selection: (rand > 0.5),
+      selection: answer,
     };
+    props.onInit(answer);
   }
 
   startTimer(answer) {

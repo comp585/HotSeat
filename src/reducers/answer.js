@@ -11,7 +11,7 @@ const answer = (state = false, action) => {
 
 export default answer;
 
-export const newScore = (answer) => {
+export const newAnswer = (answer) => {
   return {
     type: NEW_ANSWER,
     answer,
