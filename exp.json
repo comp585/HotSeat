@@ -1,6 +1,6 @@
 {
   "name": "hotseat",
-  "description": "An empty new project",
+  "description": "Game of truth or lie",
   "slug": "hotseat",
   "privacy": "public",
   "sdkVersion": "14.0.0",

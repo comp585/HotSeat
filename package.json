@@ -1,8 +1,11 @@
 {
   "name": "hotseat",
-  "version": "0.0.0",
-  "description": "Hello Expo!",
-  "author": null,
+  "version": "0.0.1",
+  "description": "Game of truth or lie",
+  "author": {
+    "name": "Dong Yeop Lee",
+    "email": "dongy7@gmail.com"
+  },
   "private": true,
   "main": "main.js",
   "dependencies": {
