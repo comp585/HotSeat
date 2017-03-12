@@ -2,22 +2,11 @@ import React, { Component } from 'react';
 import { Container, Button, Text, Grid, Row, Col, Footer, FooterTab } from 'native-base';
 import { View, Text as RNText } from 'react-native';
 
-class ResultScreen extends Component {
+class VictoryScreen extends Component {
   returnToMain() {
     this.props.navigator.push({
       name: 'Start',
     });
-  }
-
-  componentWillMount() {
-    if (this.props.p1 === 3 || this.props.p2 === 3) {
-      this.props.navigator.push({
-        name: 'Victory',
-        passProps: {
-          victoryText: (this.props.p1 === 3 ? 'Player 1 Wins!' : 'Player 2 Wins!'),
-        }
-      });
-    }
   }
 
   render() {
@@ -34,7 +23,7 @@ class ResultScreen extends Component {
                     textAlign: 'center',
                   }}
                 >
-                  {this.props.shouldSwitch ? 'Switch Roles' : 'Continue'}
+                  {this.props.victoryText}
                 </RNText>
               </Col>
             </Row>
@@ -46,7 +35,7 @@ class ResultScreen extends Component {
                 onPress={() => this.returnToMain()}
               >
                 <Text>
-                  Continue
+                  Return to Main
                 </Text>
               </Button>
             </FooterTab>
@@ -57,4 +46,4 @@ class ResultScreen extends Component {
   }
 }
 
-export default ResultScreen;
+export default VictoryScreen;

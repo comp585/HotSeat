@@ -7,6 +7,10 @@ import {
   View,
   Platform,
 } from 'react-native';
+import { Provider } from 'react-redux';
+import configureStore from './src/store/createStore';
+
+const store = configureStore();
 
 class Game extends React.Component {
   state = {
@@ -30,7 +34,9 @@ class Game extends React.Component {
     }
 
     return (
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     );
   }
 }

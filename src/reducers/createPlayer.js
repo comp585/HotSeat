@@ -43,10 +43,9 @@ const createPlayer = (name, isTeller) => {
 
 export default createPlayer;
 
-export const incScore = (name) => {
+export const incScore = () => {
   return {
     type: INC,
-    name,
   };
 };
 

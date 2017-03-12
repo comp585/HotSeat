@@ -4,10 +4,12 @@ import { Container, Col, Row, Grid, Header, Body, Title } from 'native-base';
 
 class SelectionScreen extends Component {
   startTimer(answer) {
+    const won = this.props.answer === answer;
+    this.props.onSelect(won);
     this.props.navigator.push({
       name: 'Result',
       passProps: {
-        won: (this.props.answer === answer),
+        won,
       },
     });
   }
