@@ -3,5 +3,5 @@ import rootReducer from '../reducers';
 import devToolsEnhancer from 'remote-redux-devtools';
 
 export default configureStore = () => {
-  return createStore(rootReducer, devToolsEnhancer({ realtime: true }));
+  return createStore(rootReducer);
 };

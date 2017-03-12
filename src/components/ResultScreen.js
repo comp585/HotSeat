@@ -5,7 +5,7 @@ import { View, Text as RNText } from 'react-native';
 class ResultScreen extends Component {
   returnToMain() {
     this.props.navigator.push({
-      name: 'Start',
+      name: 'Round',
     });
   }
 

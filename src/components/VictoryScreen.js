@@ -4,6 +4,7 @@ import { View, Text as RNText } from 'react-native';
 
 class VictoryScreen extends Component {
   returnToMain() {
+    this.props.reset();
     this.props.navigator.push({
       name: 'Start',
     });

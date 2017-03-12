@@ -7,7 +7,7 @@ import SelectionScreen from './Selection';
 import ResultScreen from './Result';
 import AssignmentScreen from './Assignment';
 import RoundScreen from './Round';
-import VictoryScreen from '../components/VictoryScreen';
+import VictoryScreen from './Victory';
 
 class App extends Component {
   renderScene(route, navigator) {
