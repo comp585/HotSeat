@@ -28,6 +28,8 @@ class RoundScreen extends Component {
             <CardItem
             >
               <Body>
+                {this.props.roleSwapped ?
+                  <RNText style={textStyle}>Teller: Player 2</RNText> : <RNText style={textStyle}>Teller: Player 1</RNText>}
                 <RNText style={textStyle}>
                   {`Player 1 Score: ${this.props.p1}`}
                 </RNText>
