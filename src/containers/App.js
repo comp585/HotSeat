@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { Navigator } from 'react-native';
-import StartScreen from './StartScreen';
-import TopicScreen from './TopicScreen';
-import QuestionScreen from './QuestionScreen';
-import SelectionScreen from './SelectionScreen';
-import ResultScreen from './ResultScreen';
-import AssignmentScreen from './AssignmentScreen';
+import { Provider } from 'react-redux';
+import StartScreen from '../components/StartScreen';
+import TopicScreen from '../components/TopicScreen';
+import QuestionScreen from '../components/QuestionScreen';
+import SelectionScreen from '../components/SelectionScreen';
+import ResultScreen from '../components/ResultScreen';
+import AssignmentScreen from '../components/AssignmentScreen';
+import configureStore from '../store/createStore';
+
+const store = configureStore();
 
 class App extends Component {
   renderScene(route, navigator) {
@@ -29,11 +33,13 @@ class App extends Component {
 
   render() {
     return (
-      <Navigator
-        style={{ flex: 1 }}
-        initialRoute={{ name: 'Start' }}
-        renderScene={this.renderScene}
-      />
+      <Provider store={store}>
+        <Navigator
+          style={{ flex: 1 }}
+          initialRoute={{ name: 'Start' }}
+          renderScene={this.renderScene}
+        />
+      </Provider>
     );
   }
 
