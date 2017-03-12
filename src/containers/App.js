@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import StartScreen from '../components/StartScreen';
 import TopicScreen from '../components/TopicScreen';
 import QuestionScreen from '../components/QuestionScreen';
-import SelectionScreen from '../components/SelectionScreen';
+import SelectionScreen from './Selection';
 import ResultScreen from '../components/ResultScreen';
 import AssignmentScreen from './Assignment';
 import configureStore from '../store/createStore';

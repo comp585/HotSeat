@@ -5,18 +5,19 @@ import { Container, Footer, FooterTab, Button, Col, Row, Grid, Header, Body, Tit
 class AssignmentScreen extends Component {
   constructor(props) {
     super(props);
-    const answer = (Math.random() > 0.5);
     this.state = {
-      selection: answer,
+      selection: (Math.random() > 0.5),
     };
-    props.onInit(answer);
+  }
+
+  componentDidMount() {
+    this.props.onInit(this.state.selection);
   }
 
   startTimer(answer) {
     this.props.navigator.push({
       name: 'Question',
       passProps: {
-        answer: this.state.selection,
         questions: this.props.questions,
       },
     });

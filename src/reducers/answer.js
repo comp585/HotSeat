@@ -17,3 +17,5 @@ export const newAnswer = (answer) => {
     answer,
   };
 };
+
+export const getAnswer = (state) => state.answer;

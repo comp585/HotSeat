@@ -6,10 +6,6 @@ class QuestionScreen extends Component {
   showSelection(question) {
     this.props.navigator.push({
       name: 'Selection',
-      passProps: {
-        answer: this.props.answer,
-        eval: true,
-      },
     });
   }
 
