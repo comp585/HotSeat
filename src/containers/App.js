@@ -7,6 +7,7 @@ import QuestionScreen from '../components/QuestionScreen';
 import SelectionScreen from './Selection';
 import ResultScreen from '../components/ResultScreen';
 import AssignmentScreen from './Assignment';
+import RoundScreen from './Round';
 import configureStore from '../store/createStore';
 
 const store = configureStore();
@@ -26,6 +27,8 @@ class App extends Component {
         return <SelectionScreen navigator={navigator} {...route.passProps} />;
       case 'Result':
         return <ResultScreen navigator={navigator} {...route.passProps} />;
+      case 'Round':
+        return <RoundScreen navigator={navigator} {...route.passProps} />;
       default:
         throw new Error(`Unknown route: ${route.name}`);
     }

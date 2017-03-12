@@ -4,7 +4,7 @@ import { Container, Header, Title, Content, Body, Button, Text, Footer, FooterTa
 class StartScreen extends Component {
   startGame() {
     this.props.navigator.push({
-      name: 'Topic',
+      name: 'Round',
     });
   }
 

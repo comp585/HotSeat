@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-const INC = 'INC';
-const RESET = 'RESET';
+export const INC = 'INC';
+export const RESET = 'RESET';
 
 const createPlayer = (name, isTeller) => {
   const playerName = (state = name, action) => {
@@ -56,5 +56,5 @@ export const reset = () => {
   };
 };
 
-export const getScore = (state, name) => state.name.score;
-export const getIsTeller = (state, name) => state.name.isTeller;
+export const getScore = (state, name) => state[name].score;
+export const getIsTeller = (state, name) => state[name].isTeller;
