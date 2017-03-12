@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Content, Button, Text, Header, Body, Title } from 'native-base';
-import topics from '../../data/topics';
+import { getTopics, getQuestions } from '../api';
 
 
 class TopicScreen extends Component {
@@ -11,6 +11,19 @@ class TopicScreen extends Component {
         questions,
       },
     });
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      topics: [],
+    };
+  }
+
+  componentDidMount() {
+    this.setState({
+      topics: getTopics(),
+    })
   }
 
   render() {
@@ -25,15 +38,15 @@ class TopicScreen extends Component {
             </Body>
           </Header>
 
-          {topics.map((topic, index) => {
+          {this.state.topics.map((topic, index) => {
             return (
               <Button
                 full
                 key={index}
-                onPress={() => this.showQuestions(topics[index].questions)}
+                onPress={() => this.showQuestions(getQuestions(topic))}
               >
                 <Text>
-                  {topic.category}
+                  {topic}
                 </Text>
               </Button>
             );
