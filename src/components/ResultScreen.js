@@ -34,7 +34,7 @@ class ResultScreen extends Component {
                     textAlign: 'center',
                   }}
                 >
-                  {this.props.shouldSwitch ? 'Switch Roles' : 'Continue'}
+                  {this.props.won ? 'Continue' : 'Switch Roles'}
                 </RNText>
               </Col>
             </Row>

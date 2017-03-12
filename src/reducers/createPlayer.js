@@ -8,7 +8,7 @@ const createPlayer = (name, isTeller) => {
     return state;
   };
 
-  const playerRole = (state = isTeller, action) => {
+  const role = (state = isTeller, action) => {
     switch (action.type) {
       case RESET:
         return !state;
@@ -18,16 +18,13 @@ const createPlayer = (name, isTeller) => {
   };
 
   const score = (state = 0, action) => {
-    // check if currently telling
-    let role = playerRole(state.isTeller, action);
-
     switch (action.type) {
       // Investigator guessed incorrectly
       case RESET:
         return 0;
       // Investigator guessed correctly
       case INC:
-        return (!role) ? state + 1 : state;
+        return (action.name === name) ? state : state + 1;
       default:
         return state;
     }
@@ -37,15 +34,16 @@ const createPlayer = (name, isTeller) => {
   return combineReducers({
     name: playerName,
     score,
-    isTeller: playerRole,
+    isTeller: role,
   });
 };
 
 export default createPlayer;
 
-export const incScore = () => {
+export const incScore = (name) => {
   return {
     type: INC,
+    name,
   };
 };
 
